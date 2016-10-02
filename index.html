@@ -1,38 +1,141 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/warp.css" id="theme">
+	<title>How my car became part of the IoT</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/warp.css" id="theme">
 
-		<!-- Printing and PDF exports -->
-		<script>
+	<script src="https://cdn.cityzendata.net/quantumviz/latest/webcomponentsjs/webcomponents-lite.js"></script>
+	<link rel="import" href="https://cdn.cityzendata.net/quantumviz/latest/warp10-quantumviz/warp10-quantumviz.html">
+
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h3>How my car became part of the IoT</h3>
+				<p>
+					<small>Created by <a href="https://pierrezemb.fr">Pierre Zemb</a> / <a href="http://twitter.com/PierreZ">@PierreZ</a></small>
+				</p>
+			</section>
+
+			<section>
+				<h3>My car is like</h3>
+				<br>
+				<iframe src="//giphy.com/embed/Up9ndZzspohpu" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/random-french-movie-bourvil-Up9ndZzspohpu"></a></p>
+			</section>
+
+			<section>
+				<h3>My mechanic is like</h3>
+				<br>
+				<iframe src="//giphy.com/embed/94EQmVHkveNck" width="480" height="277" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/94EQmVHkveNck"></a></p>
+			</section>
+
+			<section>
+				<h3>Time for a choice</h3>
+				<br>
+				<iframe src="//giphy.com/embed/CGzN4zUKqE8YU" width="480" height="197" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/blue-CGzN4zUKqE8YU"></a></p>
+			</section>
+
+			<section>
+				<h3>Let's collect some data</h3>
+				<img style="border:0px;box-shadow:none;" width="300" src="https://sc02.alicdn.com/kf/HTB1Iq0aLFXXXXb3XXXXq6xXFXXXG/2016-Nouvelle-Arriv%C3%A9e-ELM327-Bluetooth-Vgate-iCar3-Bluetooth-ELM327-iCar-3-OBD2-OBDII-Bluetooth-Vgate-Interface.jpg">
+			</section>
+
+			<section>
+				<h3>Torque (Pro)</h3>
+				<img style="border:0px;box-shadow:none;" src="https://lh6.ggpht.com/ubFlGK_aZNu2ndsXY-lAmQrVp3dzJuHDv82O182c85WHHxhgFq27x7WNWr4_KWCu6A=w300">
+				<p><small>
+					"Upload live OBD2 data to your webserver"
+				</small></p>
+			</section>
+
+			<section>
+				<h3>Let's use Warp10 By <a href="http://www.cityzendata.com/">Cityzen Data</a></h3>
+				<img style="border:0px;box-shadow:none;" width="300px" src="https://avatars0.githubusercontent.com/u/4659114?v=3&s=466">
+				<p>
+					<small>Warp 10 Platform is designed to collect, store and manipulate sensor data.</small>
+				</p>
+			</section>
+
+			<section>
+				<h3>What is a time series?</h3>
+					<img style="border:0px;box-shadow:none;" width="600px" src="gt.png">
+					<blockquote cite="https://en.wikipedia.org/wiki/Time_series">
+						A time series is a series of data points indexed (or listed or graphed) in time order.
+					</blockquote>
+			</section>
+
+
+			<section>
+				<warp10-quantumviz host="https://warp10-iplb.iot.ovh.net/api/v0">
+     NEWGTS
+     100000000 NaN NaN NaN 110 ADDVALUE
+     200000000 NaN NaN NaN 120 ADDVALUE
+     300000000 NaN NaN NaN 130 ADDVALUE
+     400000000 NaN NaN NaN 140 ADDVALUE
+     500000000 NaN NaN NaN 140 ADDVALUE
+     600000000 NaN NaN NaN 140 ADDVALUE
+
+
+     NEWGTS
+     100000000 NaN NaN NaN 10 ADDVALUE
+     200000000 NaN NaN NaN 9 ADDVALUE
+     300000000 NaN NaN NaN 8 ADDVALUE
+     400000000 NaN NaN NaN 7 ADDVALUE
+     500000000 NaN NaN NaN 6 ADDVALUE
+     600000000 NaN NaN NaN 8 ADDVALUE
+
+
+     2 ->LIST
+     'gts' STORE
+
+     'color' '#ff1010'
+     'key' 'Heartrate'
+     4 ->MAP
+     'color' '#1010ff'
+     'key' 'Speed'
+     4 ->MAP
+     2 ->LIST
+     'params' STORE
+
+     'interpolate' 'cardinal'
+     2 ->MAP
+     'globalParams' STORE
+
+     'gts' $gts
+     'params' $params
+     'globalParams' $globalParams
+     6 ->MAP
+
+				</warp10-quantumviz>
+		</section>
+
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
+	<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
@@ -46,5 +149,6 @@
 				]
 			});
 		</script>
-	</body>
+</body>
+
 </html>
